@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Hello, you are logged in.</h1>
+    
+    <!-- Logout Link -->
+    <p><a href="{{ url_for('logout') }}">You have successfully claimed it!!! Press here to logout</a></p>
+
+    <!-- Display Events -->
+    <h2>Registered Events</h2>
+    {% if events %}
+        <ul>
+            {% for event in events %}
+                <li>
+                    <strong>{{ event.event_name }}</strong> - 
+                    {{ event.food_type }} | 
+                    Date: {{ event.event_date }} | 
+                    Location: {{ event.location }} | 
+                    Contact: {{ event.contact_info }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events have been registered yet.</p>
+    {% endif %}
+</body>
+</html>

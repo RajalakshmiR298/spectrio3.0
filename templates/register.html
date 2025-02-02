@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body>
+    <h1>Register page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <p>{{ form.event_name.label }} {{ form.event_name() }}</p>
+        <p>{{ form.food_type.label }} {{ form.food_type() }}</p>
+        <p>{{ form.event_date.label }} {{ form.event_date() }}</p>
+        <p>{{ form.location.label }} {{ form.location() }}</p>
+        <p>{{ form.contact_info.label }} {{ form.contact_info() }}</p>
+        
+        <p>{{ form.submit() }}</p>
+    </form>
+    
+    <a href="{{url_for('login')}}">Already have an account!!Login </a><br>
+</body>
+</html>
