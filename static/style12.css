@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body takes up full height of the viewport */
+    display: flex;
+    background: linear-gradient(135deg, #7165b4, #55a8fd);
+}
