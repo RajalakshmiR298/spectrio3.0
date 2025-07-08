@@ -1,16 +1,40 @@
+ old homepage)
+
+html
+Copy
+Edit
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Flask Food Donation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-   <h1>Login in system in flask</h1> 
-   <a href="{{url_for('login')}}">Login page</a><br>
-   <a href="{{url_for('register')}}">Register page</a><br>
-   <p>Don't have an user account? <a href="{{ url_for('register_user') }}">Register here</a>.</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register Donation</a></li>
+                <li><a href="{{ url_for('register_user') }}">User Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-container">
+        <div class="home-text">
+            <h1>Donate Extra Food, Help Feed Those in Need</h1>
+            <p>
+                Join us in reducing food waste and fighting hunger by registering your event donations.  
+                Every contribution counts!
+            </p>
+            <a href="{{ url_for('register') }}" class="cta-btn">Donate Now</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Food Donation Platform</p>
+    </footer>
 </body>
 </html>
