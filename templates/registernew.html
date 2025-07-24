@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Register Donation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Donate Food</h2>
+
+        <form method="POST" novalidate>
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.event_name.label }}
+                {{ form.event_name(class="form-control", placeholder="Enter your event name") }}
+                {% for error in form.event_name.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.food_type.label }}
+                {{ form.food_type(class="form-control", placeholder="veg/non-veg") }}
+                {% for error in form.food_type.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.event_date.label }}
+                {{ form.event_date(class="form-control") }}
+                {% for error in form.event_date.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.location.label }}
+                {{ form.location(class="form-control", placeholder="Enter event location") }}
+                {% for error in form.location.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.contact_info.label }}
+                {{ form.contact_info(class="form-control", placeholder="Enter your contact info") }}
+                {% for error in form.contact_info.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            {{ form.submit(class="cta-btn") }}
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="flash-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <p class="login-link">Back to <a href="{{ url_for('dashboard') }}">Dashboard</a></p>
+    </div>
+</body>
+</html>

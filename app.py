@@ -64,9 +64,9 @@ class RegisterForm(FlaskForm):
 # --- Routes ---
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('homenew.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/loginnew', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -75,9 +75,9 @@ def login():
             login_user(user)
             return redirect(url_for('dashboard'))
         flash("Invalid username or password.", "error")
-    return render_template('login.html', form=form)
+    return render_template('loginnew.html', form=form)
 
-@app.route('/register-user', methods=['GET', 'POST'])
+@app.route('/registernew', methods=['GET', 'POST'])
 def register_user():
     form = RegisterUserForm()
     if form.validate_on_submit():
@@ -87,7 +87,7 @@ def register_user():
         db.session.commit()
         flash("Registration successful. Please log in.", "success")
         return redirect(url_for('login'))
-    return render_template('register_user.html', form=form)
+    return render_template('registernew.html', form=form)
 
 @app.route('/dashboard')
 @login_required
@@ -99,9 +99,9 @@ def dashboard():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/registernew', methods=['GET', 'POST'])
 @login_required
 def register():
     form = RegisterForm()
@@ -117,7 +117,7 @@ def register():
         db.session.commit()
         flash("Food donation registered!", "success")
         return redirect(url_for('dashboard'))
-    return render_template('register.html', form=form)
+    return render_template('registernew.html', form=form)
 
 # --- Run ---
 if __name__ == '__main__':
