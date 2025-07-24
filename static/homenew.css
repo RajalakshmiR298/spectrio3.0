@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playwrite IN", serif;
+}
+
+html, body {
+    height: 100%;
+    background: linear-gradient(to right, #93C572 50%, #C8EBB1 30%);
+    scroll-behavior: smooth;
+}
+
+
+.container {
+    margin-top: 5px;
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction:column;
+}
+
+nav {
+    width: 100%;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3f1e02;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #f5f5d5;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #d3d3b4;
+    color: #cc5c52;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.image-food {
+    flex: 2  300px;
+    text-align: center;
+}
+.image-food img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.main-text {
+    flex: 1 1 300px;
+    text-align: left;
+}
+
+.main-text h1 {
+    font-size: 2.5rem;
+    color: #3f1e02;
+    margin-bottom: 20px;
+}
+
+.main-text p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.main-text button {
+    background-color: #538610;
+    color: rgb(53, 39, 39);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.main-text button:hover {
+    background-color: #45a76d;
+}
+
+.main-text button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* About Section */
+.main-about {
+    background-color: #719e53;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.main-about h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.main-about p {
+    background-color: #C8EBB1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* User/Guest Message Box */
+.user-welcome,
+.guest-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.user-welcome a,
+.guest-actions a {
+    display: inline-block;
+    background-color: #93C572;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.user-welcome a:hover,
+.guest-actions a:hover {
+    background-color: #6e9e4f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95rem;
+    background-color: #e4f2ce;
+    color: #555;
+    margin-top: auto;
+}
+
+/* === RESPONSIVE STYLES === */
+
+/* Tablets */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .main-text {
+        text-align: center;
+    }
+
+    .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .main-text button {
+        margin: 0 auto;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .main-content {
+        padding: 40px 5%;
+    }
+
+    .main-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .main-text p {
+        font-size: 0.9rem;
+    }
+
+    .main-about h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-about p {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
